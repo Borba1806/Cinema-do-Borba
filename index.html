@@ -3,13 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Cinema do Borba - site com meus filmes favoritos e informações sobre cada filme." />
   <title>🎬 Cinema do Borba</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
     <h1>🎬 Cinema do Borba</h1>
-    <nav>
+    <nav aria-label="Menu principal">
       <a href="index.html">Início</a>
       <a href="contato.html">Contato</a>
     </nav>
@@ -18,39 +19,85 @@
   <section class="banner">
     <h2>Meus Filmes Favoritos</h2>
     <p>Uma vitrine especial com alguns filmes que eu adoro!</p>
+    <p style="margin-top: 10px; color: #bbb;">
+      Clique em <strong>Ver destaque</strong> para ler informações e assistir ao trailer.
+    </p>
   </section>
 
-  <main class="container">
-    <div class="card">
-      <img src="https://upload.wikimedia.org/wikipedia/pt/e/ee/Transformers-poster.jpg" alt="Pôster do filme Transformers" />
-      <h3>Transformers</h3>
-      <button onclick="mostrarFilme('transformers')">Ver destaque</button>
-    </div>
+  <main>
+    <section aria-labelledby="filmes-titulo">
+      <h2 id="filmes-titulo" style="text-align: center; margin-top: 30px; color: #e50914;">
+        🎥 Filmes em destaque
+      </h2>
 
-    <div class="card">
-      <img src="https://br.web.img3.acsta.net/img/2c/59/2c5907be8f52c06b3cba679cd43d2ed7.jpg" alt="Pôster do filme Como Treinar o Seu Dragão" />
-      <h3>Como Treinar o Seu Dragão</h3>
-      <button onclick="mostrarFilme('dragao')">Ver destaque</button>
-    </div>
+      <div class="container">
+        <article class="card">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/pt/e/ee/Transformers-poster.jpg"
+            alt="Pôster do filme Transformers"
+            loading="lazy"
+            decoding="async"
+          />
+          <h3>Transformers</h3>
+          <p style="padding: 0 15px 15px; color: #ddd; line-height: 1.5;">
+            Robôs alienígenas de Cybertron chegam à Terra em uma aventura cheia de ação.
+          </p>
+          <button type="button" onclick="mostrarFilme('transformers')">Ver destaque</button>
+        </article>
 
-    <div class="card">
-      <img src="https://br.web.img3.acsta.net/pictures/16/11/21/15/29/457312.jpg" alt="Pôster do filme Até o Último Homem" />
-      <h3>Até o Último Homem</h3>
-      <button onclick="mostrarFilme('ultimoHomem')">Ver destaque</button>
-    </div>
+        <article class="card">
+          <img
+            src="https://br.web.img3.acsta.net/img/2c/59/2c5907be8f52c06b3cba679cd43d2ed7.jpg"
+            alt="Pôster do filme Como Treinar o Seu Dragão"
+            loading="lazy"
+            decoding="async"
+          />
+          <h3>Como Treinar o Seu Dragão</h3>
+          <p style="padding: 0 15px 15px; color: #ddd; line-height: 1.5;">
+            Soluço e Banguela provam que dragões podem ser amigos e não inimigos.
+          </p>
+          <button type="button" onclick="mostrarFilme('dragao')">Ver destaque</button>
+        </article>
+
+        <article class="card">
+          <img
+            src="https://br.web.img3.acsta.net/pictures/16/11/21/15/29/457312.jpg"
+            alt="Pôster do filme Até o Último Homem"
+            loading="lazy"
+            decoding="async"
+          />
+          <h3>Até o Último Homem</h3>
+          <p style="padding: 0 15px 15px; color: #ddd; line-height: 1.5;">
+            A emocionante história real de coragem, fé e superação em meio à guerra.
+          </p>
+          <button type="button" onclick="mostrarFilme('ultimoHomem')">Ver destaque</button>
+        </article>
+      </div>
+    </section>
+
+    <section class="banner" style="margin-top: 10px;">
+      <h2>Sobre o site</h2>
+      <p>
+        Este site foi criado para mostrar alguns dos meus filmes favoritos e permitir
+        que outras pessoas entrem em contato comigo.
+      </p>
+      <p style="margin-top: 10px;">
+        Gostou do site? <a href="contato.html" style="color: #fff; font-weight: bold;">Entre em contato</a>.
+      </p>
+    </section>
   </main>
 
-  <section id="destaque" class="modal oculto">
+  <section id="destaque" class="modal oculto" aria-hidden="true">
     <div class="modal-conteudo">
       <span class="fechar" onclick="fecharModal()">&times;</span>
       <h2 id="tituloFilme"></h2>
       <p id="infoFilme"></p>
-      <a id="trailerFilme" href="#" target="_blank">▶ Assistir trailer</a>
+      <a id="trailerFilme" href="#" target="_blank" rel="noopener noreferrer">▶ Assistir trailer</a>
     </div>
   </section>
 
   <footer>
-    <p>© 2026 - Cinema do Borba</p>
+    <p>© 2026 - Cinema do Borba | Feito por Borba</p>
   </footer>
 
   <script src="script.js"></script>
